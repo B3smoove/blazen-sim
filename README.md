@@ -153,6 +153,18 @@ Request body:
 }
 ```
 
+## Screenshots
+
+### Auth Gateway
+![Auth Gateway](images/auth-gateway.png)
+
+The entry screen features a live cellular automata wildfire simulation background with a single-click entry button.
+
+### Main Interface
+![Main Interface](images/main-interface.png)
+
+The conversational interface with AI-powered parameter extraction, thermal visualization, and simulation history tracking.
+
 ## Usage
 
 1. Open the application in your browser
