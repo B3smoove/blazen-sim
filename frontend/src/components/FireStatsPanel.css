@@ -1,0 +1,68 @@
+/* =============================================================================
+   FireStatsPanel.css – Compact stats bar displayed below the simulation canvas.
+   ============================================================================= */
+
+.fire-stats {
+  display: flex;
+  align-items: stretch;
+  flex-shrink: 0;
+  height: 76px;
+  background-color: var(--color-bg-secondary);
+  border-top: 1px solid var(--color-border-default);
+  overflow: hidden;
+}
+
+/* ── Stat card ───────────────────────────────────────────────────────────────── */
+
+.fire-stats__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  gap: 2px;
+  padding: var(--space-xs) var(--space-sm);
+  transition: background-color var(--transition-fast);
+}
+
+.fire-stats__card--highlight .fire-stats__value {
+  color: var(--color-accent-bright);
+}
+
+/* ── Divider ─────────────────────────────────────────────────────────────────── */
+
+.fire-stats__divider {
+  width: 1px;
+  background-color: var(--color-border-default);
+  flex-shrink: 0;
+  margin: var(--space-sm) 0;
+}
+
+/* ── Icon ────────────────────────────────────────────────────────────────────── */
+
+.fire-stats__icon {
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* ── Value ───────────────────────────────────────────────────────────────────── */
+
+.fire-stats__value {
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  font-family: var(--font-family-mono);
+  color: var(--color-text-primary);
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+/* ── Label ───────────────────────────────────────────────────────────────────── */
+
+.fire-stats__label {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-secondary);
+  line-height: 1;
+}

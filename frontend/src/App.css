@@ -1,0 +1,132 @@
+/* =============================================================================
+   App.css – Layout styles for the top-level application shell.
+   All colours reference CSS variables defined in index.css.
+   ============================================================================= */
+
+/* ── Application Shell ───────────────────────────────────────────────────────── */
+
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--color-bg-primary);
+}
+
+/* ── Header ──────────────────────────────────────────────────────────────────── */
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-sm) var(--space-xl);
+  background-color: var(--color-bg-secondary);
+  border-bottom: 1px solid var(--color-accent-deep);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+  flex-shrink: 0;
+  min-height: 60px;
+}
+
+.app-header__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.app-header__logo {
+  font-size: 26px;
+  line-height: 1;
+}
+
+.app-header__title {
+  font-size: var(--font-size-xl);
+  font-weight: 800;
+  color: var(--color-accent-bright);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.app-header__subtitle {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-left: var(--space-sm);
+  border-left: 1px solid var(--color-border-default);
+  padding-left: var(--space-sm);
+}
+
+.app-header__session {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.app-header__username {
+  font-size: var(--font-size-sm);
+}
+
+.app-header__logout {
+  font-size: var(--font-size-sm);
+  padding: var(--space-xs) var(--space-md);
+}
+
+/* ── Main content area ───────────────────────────────────────────────────────── */
+
+.app-main {
+  display: grid;
+  grid-template-columns: 420px 1fr 280px;
+  flex: 1;
+  overflow: hidden;
+  gap: 0;
+}
+
+.app-main__chat {
+  border-right: 1px solid var(--color-border-default);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-main__viz {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-main__sidebar {
+  border-left: 1px solid var(--color-border-default);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Responsive breakpoint ────────────────────────────────────────────────────── */
+
+@media (max-width: 1100px) {
+  .app-main {
+    grid-template-columns: 360px 1fr 240px;
+  }
+}
+
+@media (max-width: 900px) {
+  .app-main {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  .app-main__chat {
+    border-right: none;
+    border-bottom: 1px solid var(--color-border-default);
+  }
+
+  .app-main__sidebar {
+    border-left: none;
+    border-top: 1px solid var(--color-border-default);
+    max-height: 260px;
+  }
+
+  .app-header__subtitle {
+    display: none;
+  }
+}

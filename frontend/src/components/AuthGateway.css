@@ -1,0 +1,144 @@
+/* =============================================================================
+   AuthGateway.css – Styles for the authentication gateway screen.
+   ============================================================================= */
+
+/* ── Full-screen wrapper ─────────────────────────────────────────────────────── */
+
+.auth-gateway {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: var(--space-lg);
+  background-color: var(--color-bg-primary);
+  overflow: hidden;
+}
+
+/* Subtle radial gradient backdrop for depth */
+.auth-gateway__backdrop {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 60% 50% at 50% 40%,
+    rgba(139, 0, 0, 0.12) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Card ────────────────────────────────────────────────────────────────────── */
+
+.auth-gateway__card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 420px;
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+/* ── Brand ───────────────────────────────────────────────────────────────────── */
+
+.auth-gateway__brand {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.auth-gateway__logo {
+  font-size: 48px;
+  line-height: 1;
+  filter: drop-shadow(0 0 12px rgba(255, 68, 68, 0.7));
+}
+
+.auth-gateway__title {
+  font-size: var(--font-size-3xl);
+  color: var(--color-accent-bright);
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.auth-gateway__tagline {
+  font-size: var(--font-size-sm);
+  letter-spacing: 0.04em;
+}
+
+/* ── Heading ─────────────────────────────────────────────────────────────────── */
+
+.auth-gateway__heading {
+  font-size: var(--font-size-xl);
+  color: var(--color-text-primary);
+  text-align: center;
+}
+
+/* ── Error banner ────────────────────────────────────────────────────────────── */
+
+.auth-gateway__error {
+  background-color: rgba(255, 68, 68, 0.08);
+  border: 1px solid var(--color-accent-bright);
+  border-radius: var(--radius-md);
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--font-size-sm);
+  text-align: center;
+}
+
+/* ── Form ────────────────────────────────────────────────────────────────────── */
+
+.auth-gateway__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.auth-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.auth-form-field__label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.auth-gateway__submit {
+  width: 100%;
+  padding: var(--space-md);
+  font-size: var(--font-size-base);
+  margin-top: var(--space-xs);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* ── Toggle ──────────────────────────────────────────────────────────────────── */
+
+.auth-gateway__toggle {
+  text-align: center;
+  font-size: var(--font-size-sm);
+}
+
+.auth-gateway__toggle-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--color-accent-bright);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color var(--transition-fast);
+}
+
+.auth-gateway__toggle-btn:hover {
+  color: var(--color-text-accent);
+}

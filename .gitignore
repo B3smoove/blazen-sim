@@ -1,0 +1,14 @@
+# Environment variables – NEVER commit these
+backend/.env
+frontend/.env
+
+# Dependencies
+backend/node_modules/
+frontend/node_modules/
+
+# Build output
+backend/dist/
+frontend/dist/
+
+# OS
+.DS_Store

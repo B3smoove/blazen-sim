@@ -1,0 +1,260 @@
+/* =============================================================================
+   SimInfoSidebar.css – Right sidebar: extracted params + simulation history.
+   ============================================================================= */
+
+/* ── Sidebar wrapper ─────────────────────────────────────────────────────────── */
+
+.sim-sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: var(--color-bg-secondary);
+  overflow: hidden;
+}
+
+/* ── Section shared styles ───────────────────────────────────────────────────── */
+
+.sim-sidebar__section {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  border-bottom: 1px solid var(--color-border-default);
+}
+
+.sim-sidebar__section--history {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 1;
+}
+
+/* ── Section title bar ───────────────────────────────────────────────────────── */
+
+.sim-sidebar__section-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  padding: var(--space-sm) var(--space-md);
+  background-color: var(--color-bg-primary);
+  border-bottom: 1px solid var(--color-border-default);
+  flex-shrink: 0;
+  margin: 0;
+}
+
+.sim-sidebar__title-icon {
+  font-size: 12px;
+}
+
+.sim-sidebar__badge {
+  margin-left: auto;
+  background-color: var(--color-accent-deep);
+  color: var(--color-text-primary);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 10px;
+  letter-spacing: 0.02em;
+}
+
+/* ── Empty state ─────────────────────────────────────────────────────────────── */
+
+.sim-sidebar__empty {
+  font-size: var(--font-size-xs);
+  text-align: center;
+  padding: var(--space-lg) var(--space-md);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Parameters grid ─────────────────────────────────────────────────────────── */
+
+.sim-sidebar__params-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: var(--space-xs) var(--space-md) var(--space-sm);
+  margin: 0;
+}
+
+.sim-sidebar__param-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 4px 0;
+  font-size: var(--font-size-xs);
+}
+
+.sim-sidebar__param-row--divider {
+  border-bottom: 1px solid var(--color-border-default);
+  padding: 0;
+  margin: 3px 0;
+}
+
+.sim-sidebar__param-row dt {
+  color: var(--color-text-secondary);
+  font-weight: 600;
+}
+
+.sim-sidebar__param-row dd {
+  color: var(--color-text-primary);
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-xs);
+  margin: 0;
+  text-align: right;
+}
+
+.sim-sidebar__wind-label {
+  color: var(--color-text-secondary);
+  font-size: 10px;
+}
+
+/* ── History list ────────────────────────────────────────────────────────────── */
+
+.sim-sidebar__history-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-xs) var(--space-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.sim-sidebar__history-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: var(--space-sm);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg-primary);
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.sim-sidebar__history-item:hover {
+  background-color: var(--color-bg-elevated);
+  border-color: var(--color-border-accent);
+}
+
+.sim-sidebar__history-item--active {
+  border-color: var(--color-accent-bright);
+  background-color: rgba(255, 68, 68, 0.06);
+}
+
+.sim-sidebar__history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sim-sidebar__run-num {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  font-family: var(--font-family-mono);
+}
+
+.sim-sidebar__run-status {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.sim-sidebar__history-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  font-size: 11px;
+}
+
+.sim-sidebar__history-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  margin-top: 2px;
+  font-family: var(--font-family-mono);
+}
+
+/* ── History item wrapper (button + menu) ──────────────────────────────────────── */
+
+.sim-sidebar__history-wrapper {
+  display: flex;
+  align-items: stretch;
+  gap: var(--space-xs);
+}
+
+.sim-sidebar__history-menu-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.sim-sidebar__menu-btn {
+  width: 28px;
+  height: 100%;
+  min-height: 40px;
+  background: transparent;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-md);
+  color: var(--color-text-secondary);
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+  padding: 0;
+}
+
+.sim-sidebar__menu-btn:hover {
+  background-color: var(--color-bg-elevated);
+  color: var(--color-text-primary);
+}
+
+.sim-sidebar__menu-btn:focus-visible {
+  outline: 2px solid var(--color-accent-bright);
+  outline-offset: -2px;
+}
+
+.sim-sidebar__menu-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 4px;
+  min-width: 140px;
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  z-index: 10;
+  overflow: hidden;
+}
+
+.sim-sidebar__menu-item {
+  width: 100%;
+  padding: 8px 12px;
+  background: transparent;
+  border: none;
+  text-align: left;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.sim-sidebar__menu-item:hover {
+  background-color: var(--color-bg-elevated);
+}
+
+.sim-sidebar__menu-item:focus-visible {
+  outline: 2px solid var(--color-accent-bright);
+  outline-offset: -2px;
+}
+
