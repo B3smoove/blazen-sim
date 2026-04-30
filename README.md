@@ -1,6 +1,6 @@
 ## Features
 
-... (previous features)
+Here are some features of our application:
 
-![Login Screen](link_to_login_screen_image)
-![Conversational Interface](link_to_conversational_interface_image)
+![Blazen Login Screen](assets/blazen-login.png)
+![Blazen Interface](assets/blazen-interface.png)
