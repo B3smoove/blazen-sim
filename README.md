@@ -1,13 +1,11 @@
-## Features
-
-Here are some features of our application:
-
-![Blazen Login Screen](assets/blazen-login.png)
-![Blazen Interface](assets/blazen-interface.png)
-
 # Blazen Sim
 
 A full-stack web application providing a conversational interface for wildland fire simulation using the DEVS-FIRE model. Users can describe fire scenarios in natural language, and the system extracts simulation parameters via Claude AI, runs the DEVS-FIRE simulation, and visualizes the thermal output.
+
+## Screenshots
+
+![Blazen Login Screen](assets/blazen-login.png)
+![Blazen Interface](assets/blazen-interface.png)
 
 ## Features
 
@@ -152,18 +150,6 @@ Request body:
   "simulationContext": "Optional context from previous runs"
 }
 ```
-
-## Screenshots
-
-### Auth Gateway
-![Auth Gateway](images/auth-gateway.png)
-
-The entry screen features a live cellular automata wildfire simulation background with a single-click entry button.
-
-### Main Interface
-![Main Interface](images/main-interface.png)
-
-The conversational interface with AI-powered parameter extraction, thermal visualization, and simulation history tracking.
 
 ## Usage
 
